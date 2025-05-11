@@ -88,4 +88,12 @@ public class Vehicle {
     public void setColor(String color) {
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                " Model: %s | Make: %s | Year: %d| Mileage: %,d mi | Type: %s | Color: %s | Price: $%,.2f | VIN: %d",
+                model, make, year, odometer, vehicleType, color, price, vin
+        );
+    }
 }
