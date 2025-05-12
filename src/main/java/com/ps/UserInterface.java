@@ -1,5 +1,4 @@
 package com.ps;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,7 +7,7 @@ public class UserInterface {
     private Dealership dealership;
     private final DealershipFileManager fileManager = new DealershipFileManager();
 
-    public void init(){;
+    public void init(){
       this.dealership = fileManager.getDealership();
     }
 
@@ -276,8 +275,7 @@ public class UserInterface {
 
 
     private void processRemoveVehicleRequest(){
-        System.out.print("Enter VIN of vehicle to remove: ");
-        int vin = Integer.parseInt(scanner.nextLine());
+        int vin = (int)getValidatedDouble("Enter VIN of vehicle to remove: ");
 
         List<Vehicle> inventory = dealership.getAllVehicles();
         Vehicle removeVehicle = null;
